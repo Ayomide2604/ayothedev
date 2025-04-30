@@ -41,12 +41,6 @@ const Services = () => {
 								/>
 							))}
 						</div>
-
-						<div className="mt-4 text-end">
-							<a href="#contact" className="btn btn-primary">
-								Get in Touch
-							</a>
-						</div>
 					</div>
 				</div>
 			</div>

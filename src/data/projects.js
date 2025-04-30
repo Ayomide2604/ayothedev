@@ -11,8 +11,8 @@ const projects = [
 			"/img/projects/portfolio/portfolio3.png",
 		],
 		tech: ["Html", "Css", "Bootstrap", "React"],
-		liveUrl: "https://google.com",
-		githubUrl: "https://ayomide2604.github.io",
+		liveUrl: "https://ayothedev.vercel.app/",
+		githubUrl: "https://github.com/Ayomide2604/ayothedev",
 	},
 	{
 		id: 2,
