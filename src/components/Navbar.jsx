@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { MdMenu, MdClose } from "react-icons/md";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
+import Logo from "../assets/img/logo.png";
+
 const Navbar = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 
@@ -12,21 +15,20 @@ const Navbar = () => {
 	return (
 		<header id="header" className="header d-flex align-items-center sticky-top">
 			<div className="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-				<a
-					href="index.html"
-					className="logo d-flex align-items-center me-auto me-xl-0"
-				>
+				<Link to="/" className="logo d-flex align-items-center me-auto me-xl-0">
 					{/* Uncomment the line below if you also wish to use an image logo  */}
-					{/* <img src="" alt=""/>  */}
+					<div className="d-none d-md-block">
+						<img src={Logo} alt="site-logo" />
+					</div>
 					<h1 className="sitename">AyotheDev</h1>
-				</a>
+				</Link>
 
 				<nav id="navmenu " className="navmenu navmenu-active ">
-					<ul>
+					<ul onClick={toggleMobileMenu}>
 						<li>
-							<a href="#hero" className="active">
+							<Link to="/" className="active">
 								Home
-							</a>
+							</Link>
 						</li>
 						<li>
 							<a href="#about">About</a>
@@ -40,49 +42,7 @@ const Navbar = () => {
 						<li>
 							<a href="#services">Services</a>
 						</li>
-						<li className="dropdown ">
-							<a href="#">
-								<span>Dropdown</span>
-								<i className="bi bi-chevron-down toggle-dropdown"></i>
-							</a>
-							<ul>
-								<li>
-									<a href="#">Dropdown 1</a>
-								</li>
-								<li className="dropdown">
-									<a href="#">
-										<span>Deep Dropdown</span>
-										<i className="bi bi-chevron-down toggle-dropdown"></i>
-									</a>
-									<ul>
-										<li>
-											<a href="#">Deep Dropdown 1</a>
-										</li>
-										<li>
-											<a href="#">Deep Dropdown 2</a>
-										</li>
-										<li>
-											<a href="#">Deep Dropdown 3</a>
-										</li>
-										<li>
-											<a href="#">Deep Dropdown 4</a>
-										</li>
-										<li>
-											<a href="#">Deep Dropdown 5</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">Dropdown 2</a>
-								</li>
-								<li>
-									<a href="#">Dropdown 3</a>
-								</li>
-								<li>
-									<a href="#">Dropdown 4</a>
-								</li>
-							</ul>
-						</li>
+
 						<li>
 							<a href="#contact">Contact</a>
 						</li>
@@ -95,16 +55,16 @@ const Navbar = () => {
 					</div>
 				</nav>
 
-				<div className="header-social-links">
-					<a href="#" className="twitter">
-						<FaXTwitter />
+				<div className="header-social-links  ">
+					<a href="#" className="twitter ms-2">
+						<FaWhatsapp size={25} />
 					</a>
 
-					<a href="#" className="linkedin">
-						<FaLinkedin />
+					<a href="#" className="linkedin ms-2">
+						<FaLinkedin size={25} />
 					</a>
-					<a href="#" className="linkedin">
-						<FaGithub />
+					<a href="#" className="linkedin ms-2">
+						<FaGithub size={25} />
 					</a>
 				</div>
 			</div>

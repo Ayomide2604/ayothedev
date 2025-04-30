@@ -1,3 +1,5 @@
+import heroImage from "../assets/img/hero.png";
+
 const Hero = () => {
 	return (
 		<>
@@ -6,10 +8,11 @@ const Hero = () => {
 				<div className="container" data-aos="fade-up" data-aos-delay={100}>
 					<div className="row align-items-center content">
 						<div className="col-lg-6" data-aos="fade-up" data-aos-delay={200}>
-							<h2>Crafting Digital Experiences with Passion</h2>
+							<h2>Hello, I'm Ayomide — Web Developer</h2>
 							<p className="lead">
-								Transforming ideas into elegant solutions through creative
-								design and innovative development
+								I'm passionate about building both the front-end and back-end of
+								modern web applications. Constantly learning, improving, and
+								bringing ideas to life through code.
 							</p>
 							<div
 								className="cta-buttons"
@@ -23,30 +26,36 @@ const Hero = () => {
 									Let's Connect
 								</a>
 							</div>
-							<div
+
+							{/* Stats */}
+							{/* <div
 								className="hero-stats"
 								data-aos="fade-up"
 								data-aos-delay={400}
 							>
 								<div className="stat-item">
 									<span className="stat-number">5+</span>
-									<span className="stat-label">Years Experience</span>
+									<span className="stat-label">Years Learning & Building</span>
 								</div>
 								<div className="stat-item">
 									<span className="stat-number">100+</span>
-									<span className="stat-label">Projects Completed</span>
+									<span className="stat-label">
+										Projects Practiced & Completed
+									</span>
 								</div>
 								<div className="stat-item">
 									<span className="stat-number">50+</span>
-									<span className="stat-label">Happy Clients</span>
+									<span className="stat-label">
+										Happy Clients & Collaborations
+									</span>
 								</div>
-							</div>
+							</div> */}
 						</div>
 						<div className="col-lg-6">
-							<div className="hero-image">
+							<div className="hero-image d-lg-block d-none">
 								<img
-									src="assets/img/profile/profile-1.webp"
-									alt="Portfolio Hero Image"
+									src={heroImage}
+									alt="Ayomide Fullstack Developer Hero Image"
 									className="img-fluid"
 									data-aos="zoom-out"
 									data-aos-delay={300}

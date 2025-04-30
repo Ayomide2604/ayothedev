@@ -1,13 +1,24 @@
-import { useState } from "react";
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./pages/Hero";
+import Footer from "./components/Footer";
+import HomeScreen from "./screens/HomeScreen";
+import PortfolioDetailScreen from "./screens/PortfolioDetailScreen";
+import ErrorPage from "./pages/ErrorPage";
+import WhatsappButton from "./components/WhatsappButton";
 
 function App() {
 	return (
 		<>
 			<Navbar />
-			<Hero />
+			<Routes>
+				<Route path="/" element={<HomeScreen />} />
+				<Route path="/portfolio/:id" element={<PortfolioDetailScreen />} />
+				<Route path="*" element={<ErrorPage />} />
+			</Routes>
+			<WhatsappButton />
+
+			<Footer />
 		</>
 	);
 }
