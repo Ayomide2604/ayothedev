@@ -1,4 +1,30 @@
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 const Contact = () => {
+	const form = useRef();
+
+	const sendEmail = (e) => {
+		e.preventDefault();
+
+		emailjs
+			.sendForm(
+				"service_d1jb09a",
+				"template_d1pc929",
+				form.current,
+				"rVThJft0mEh2z1jPH"
+			)
+			.then(
+				() => {
+					alert("Message sent!");
+					form.current.reset();
+				},
+				(error) => {
+					alert("Failed to send message");
+					console.error(error);
+				}
+			);
+	};
 	return (
 		<>
 			<section id="contact" className="contact section light-background">
@@ -40,7 +66,7 @@ const Contact = () => {
 								data-aos-delay={300}
 							>
 								<div className="card-body p-4 p-lg-5">
-									<form action="" method="" className="">
+									<form ref={form} onSubmit={sendEmail}>
 										<div className="row gy-4">
 											<div className="col-12">
 												<input
@@ -66,6 +92,7 @@ const Contact = () => {
 													className="form-control"
 													name="subject"
 													placeholder="Subject"
+													required
 												/>
 											</div>
 											<div className="col-12">

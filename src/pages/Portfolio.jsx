@@ -24,8 +24,10 @@ const Portfolio = () => {
 					</svg>
 				</div>
 				<p>
-					Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-					quam nihil molestiae consequatur vel illum qui dolorem
+					Explore a curated collection of my recent projects, showcasing my
+					skills in web development and problem solving. Each project reflects
+					real-world challenges, built with modern technologies and a passion
+					for clean, scalable code.
 				</p>
 			</div>
 			{/* End Section Title */}
@@ -38,6 +40,7 @@ const Portfolio = () => {
 							id={project.id}
 							title={project.title}
 							image={project.images[0]}
+							tech={project.tech}
 						/>
 					))}
 				</div>

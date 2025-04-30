@@ -1,6 +1,6 @@
 import { FaEye, FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-const Project = ({ id, title, description, image }) => {
+const Project = ({ id, title, description, image, tech }) => {
 	return (
 		<div className="col-lg-6 col-md-6 portfolio-item isotope-item filter-graphics">
 			<div className="portfolio-card">
@@ -30,7 +30,9 @@ const Project = ({ id, title, description, image }) => {
 				<div className="portfolio-content">
 					<h3>{title}</h3>
 					<p>{description}</p>
-					<p className="badge badge-pill bg-info">Tech Stack</p>
+					{tech.map((t) => (
+						<p className="badge badge-pill bg-secondary text-white  ms-2">{t}</p>
+					))}
 				</div>
 			</div>
 		</div>
