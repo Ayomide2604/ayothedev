@@ -1,5 +1,7 @@
+import ImageSlide from "../components/ImageSlide";
 import projects from "./../data/projects";
 import { useParams } from "react-router-dom";
+
 const PortfolioDetailScreen = () => {
 	const { id } = useParams();
 
@@ -18,9 +20,7 @@ const PortfolioDetailScreen = () => {
 				<div className="container" data-aos="fade-up">
 					<div className="row gy-4 g-lg-5">
 						<div className="col-lg-6">
-							{project.images.map((image) => (
-								<img src={image} className="img-fluid mb-4" alt="" />
-							))}
+							<ImageSlide images={project.images} />
 						</div>
 
 						<div className="col-lg-6">
