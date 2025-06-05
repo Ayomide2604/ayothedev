@@ -3,16 +3,22 @@ import Project from "../components/Project";
 import projectsJson from "../data/projects";
 
 const Portfolio = () => {
-	const [projects, setProjects] = useState([]);
+	const [allProjects, setAllProjects] = useState([]);
+	const [visibleProjectsCount, setVisibleProjectsCount] = useState(3);
 
 	useEffect(() => {
-		setProjects(projectsJson);
-	});
+		setAllProjects(projectsJson);
+	}, []); // Empty dependency array means this effect runs only once after initial render
+
+	const handleViewAll = () => {
+		setVisibleProjectsCount(allProjects.length);
+	};
+
 	return (
 		<section id="portfolio" className="portfolio section">
 			{/* Section Title */}
 			<div className="container section-title" data-aos="fade-up">
-				<h2>Portfolio</h2>
+				<h2>Featured Projects</h2>
 				<div className="title-shape">
 					<svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -24,26 +30,38 @@ const Portfolio = () => {
 					</svg>
 				</div>
 				<p>
-					Explore a curated collection of my recent projects, showcasing my
-					skills in web development and problem solving. Each project reflects
-					real-world challenges, built with modern technologies and a passion
-					for clean, scalable code.
+					A showcase of my recent work in full-stack development and API
+					integration
 				</p>
 			</div>
 			{/* End Section Title */}
 
 			<div className="container" data-aos="fade-up" data-aos-delay={100}>
 				<div className="row g-4 " data-aos="fade-up" data-aos-delay={300}>
-					{projects.map((project) => (
+					{allProjects.slice(0, visibleProjectsCount).map((project) => (
 						<Project
 							key={project.id}
 							id={project.id}
 							title={project.title}
-							image={project.images[0]}
+							image={project.image}
 							tech={project.tech}
+							liveUrl={project.liveUrl}
+							githubUrl={project.githubUrl}
 						/>
 					))}
 				</div>
+
+				{/* View All Projects Button */}
+				{visibleProjectsCount < allProjects.length && (
+					<div className="mt-4 text-center">
+						<button
+							onClick={handleViewAll}
+							className="btn btn-outline-secondary d-inline-flex align-items-center"
+						>
+							View All Projects <i className="bi bi-arrow-right ms-2"></i>
+						</button>
+					</div>
+				)}
 			</div>
 		</section>
 	);

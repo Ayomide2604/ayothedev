@@ -26,18 +26,10 @@ const Navbar = () => {
 				<nav id="navmenu " className="navmenu navmenu-active ">
 					<ul onClick={toggleMobileMenu}>
 						<li>
-							<Link to="/" className="active">
-								Home
-							</Link>
-						</li>
-						<li>
 							<a href="#about">About</a>
 						</li>
 						<li>
-							<a href="#resume">Resume</a>
-						</li>
-						<li>
-							<a href="#portfolio">Portfolio</a>
+							<a href="#portfolio">Projects</a>
 						</li>
 						<li>
 							<a href="#services">Services</a>
@@ -56,10 +48,6 @@ const Navbar = () => {
 				</nav>
 
 				<div className="header-social-links  ">
-					<a href="https://wa.me/+2348126660484" target="_blank">
-						<FaWhatsapp color="#25d366" size={25} />
-					</a>
-
 					<a href="https://www.linkedin.com/in/ayomide-olowu/" target="_blank">
 						<FaLinkedin color="#0a66c2" size={25} />
 					</a>

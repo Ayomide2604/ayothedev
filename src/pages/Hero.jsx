@@ -8,12 +8,32 @@ const Hero = () => {
 				<div className="container" data-aos="fade-up" data-aos-delay={100}>
 					<div className="row align-items-center content">
 						<div className="col-lg-6" data-aos="fade-up" data-aos-delay={200}>
-							<h2>Hello, I'm Ayomide — Web Developer</h2>
+							{/* Available for new opportunities badge */}
+							<span className="badge bg-light text-dark mb-3">
+								Available for new opportunities
+							</span>
+
+							<h2>
+								Full-Stack Developer <br />
+								<span style={{ color: "#EB8951" }}>Building the Future</span>
+							</h2>
 							<p className="lead">
-								I'm passionate about building both the front-end and back-end of
-								modern web applications. Constantly learning, improving, and
-								bringing ideas to life through code.
+								I architect and develop scalable web applications, robust APIs,
+								and seamless integrations that drive business growth.
+								Specializing in modern technologies and best practices.
 							</p>
+
+							{/* Technologies/Skills */}
+							<div className="d-flex flex-wrap gap-2 mb-4">
+								<span className="badge bg-secondary">React</span>
+								<span className="badge bg-secondary">Python</span>
+								<span className="badge bg-secondary">Django</span>
+								<span className="badge bg-secondary">Express</span>
+								<span className="badge bg-secondary">Javascript</span>
+								<span className="badge bg-secondary">Postgres</span>
+								<span className="badge bg-secondary">Mongo DB</span>
+							</div>
+
 							<div
 								className="cta-buttons"
 								data-aos="fade-up"
@@ -22,8 +42,8 @@ const Hero = () => {
 								<a href="#portfolio" className="btn btn-primary">
 									View My Work
 								</a>
-								<a href="#contact" className="btn btn-outline">
-									Let's Connect
+								<a href="#" className="btn btn-outline-secondary">
+									Download Resume
 								</a>
 							</div>
 
@@ -52,7 +72,7 @@ const Hero = () => {
 							</div> */}
 						</div>
 						<div className="col-lg-6">
-							<div className="hero-image d-lg-block d-none">
+							<div className="hero-image d-lg-block">
 								<img
 									src={heroImage}
 									alt="Ayomide Fullstack Developer Hero Image"

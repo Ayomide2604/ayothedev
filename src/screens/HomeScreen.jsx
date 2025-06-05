@@ -12,7 +12,6 @@ const HomeScreen = () => {
 			<Hero />
 			<About />
 			<Skills />
-			<Resume />
 			<Portfolio />
 			<Services />
 			<Contact />

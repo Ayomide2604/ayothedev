@@ -1,38 +1,87 @@
-import { FaEye, FaArrowRight } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-const Project = ({ id, title, description, image, tech }) => {
+import { BiCode, BiLink, BiLogoGithub } from "react-icons/bi";
+
+const Project = ({
+	id,
+	title,
+	description,
+	image,
+	tech,
+	liveUrl,
+	githubUrl,
+}) => {
 	return (
-		<div className="col-lg-6 col-md-6 portfolio-item isotope-item filter-graphics">
-			<div className="portfolio-card">
-				<div className="portfolio-image">
+		<div className="col-lg-4 col-md-6 portfolio-item">
+			{/* Project Image */}
+			<div className="portfolio-img">
+				{/* Use the single image prop */}
+				{image ? (
 					<img
 						src={image}
 						className="img-fluid"
-						alt=""
+						alt={title}
 						loading="lazy"
-						style={{ objectFit: "contain" }}
+						style={{ width: "100%", height: "200px", objectFit: "cover" }}
 					/>
-					<div className="portfolio-overlay">
-						<div className="portfolio-actions">
-							<a
-								href={image}
-								className="glightbox preview-link"
-								data-gallery="portfolio-gallery-graphics"
-							>
-								<FaEye />
-							</a>
-							<Link to={`/portfolio/${id}`} className="details-link">
-								<FaArrowRight />
-							</Link>
-						</div>
+				) : (
+					<div
+						style={{
+							height: "200px",
+							backgroundColor: "#f0f0f0",
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+						}}
+					>
+						Image Placeholder
 					</div>
+				)}
+			</div>
+
+			<div className="portfolio-info p-4">
+				{/* Project Title */}
+				<h4>{title}</h4>
+				{/* Project Description */}
+				<p>{description}</p>
+
+				{/* Technologies/Skills used */}
+				<div className="d-flex flex-wrap gap-2 mb-3">
+					{tech &&
+						tech.map((t, index) => (
+							<span key={index} className="badge bg-light text-dark">
+								{t}
+							</span>
+						))}
 				</div>
-				<div className="portfolio-content">
-					<h3>{title}</h3>
-					<p>{description}</p>
-					{tech.map((t) => (
-						<p className="badge badge-pill bg-secondary text-white  ms-2">{t}</p>
-					))}
+
+				{/* Action Buttons */}
+				<div className="d-flex gap-1">
+					{/* Code Button */}
+					{githubUrl && (
+						<a
+							href={githubUrl}
+							className="btn btn-outline-secondary btn-sm d-flex align-items-center"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<BiLogoGithub
+								color="black"
+								className="bi bi-box-arrow-up-right me-1"
+							/>{" "}
+							Code
+						</a>
+					)}
+					{/* Live Demo Button */}
+					{liveUrl && (
+						<a
+							href={liveUrl}
+							className="btn  btn-sm d-flex text-white align-items-center"
+							target="_blank"
+							rel="noopener noreferrer"
+							style={{ backgroundColor: "#EB8951" }}
+						>
+							<BiLink className="bi bi-box-arrow-up-right me-1" /> Live Demo
+						</a>
+					)}
 				</div>
 			</div>
 		</div>

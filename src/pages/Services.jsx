@@ -16,21 +16,18 @@ const Services = () => {
 						></path>
 					</svg>
 				</div>
+				<p>
+					Comprehensive development services to bring your ideas to life with
+					cutting-edge technology
+				</p>
 			</div>
 
 			<div className="container" data-aos="fade-up" data-aos-delay="100">
+				{/* Projects Completed and Years Experience Section */}
+			
+
 				<div className="row align-items-center">
-					<div className="col-lg-4 mb-5 mb-lg-0">
-						<h2 className="fw-bold mb-4 servies-title">
-							Practical Web Development Services for Growing Businesses
-						</h2>
-						<p className="mb-4">
-							Whether you're launching a new project or improving an existing
-							one, I help bring ideas to life with modern, scalable web
-							technologies like React, Django, and Node.js.
-						</p>
-					</div>
-					<div className="col-lg-8">
+					<div className="col-12">
 						<div className="row g-4">
 							{services.map((service) => (
 								<Service
